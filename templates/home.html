@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Wholesale Clothing{% endblock %}
+
+{% block content %}
+<section class="card">
+    <h2>Welcome to our Wholesale Clothing System</h2>
+    <p>Manage your inventory and orders efficiently with our cloud-based solution.</p>
+    
+    <div class="quick-links">
+        <a href="/inventory" class="button">View Inventory</a>
+        <a href="/orders" class="button">View Orders</a>
+        <a href="/products/add" class="button">Add Product</a>
+        <a href="/orders/add" class="button">Place Order</a>
+    </div>
+</section>
+
+<section class="card">
+    <h2>System Overview</h2>
+    <div class="stats">
+        <div class="stat-item">
+            <h3>Total Products</h3>
+            <p>{{ products_count }}</p>
+        </div>
+        <div class="stat-item">
+            <h3>Total Orders</h3>
+            <p>{{ orders_count }}</p>
+        </div>
+    </div>
+</section>
+{% endblock %}

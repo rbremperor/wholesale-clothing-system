@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Order Management - Wholesale Clothing{% endblock %}
+
+{% block content %}
+<section class="card">
+    <div class="card-header">
+        <h2>Order History</h2>
+        <a href="/orders/add" class="button">Place New Order</a>
+    </div>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Product</th>
+                    <th>Customer</th>
+                    <th>Qty</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for order in orders %}
+                <tr>
+                    <td>{{ order[0] }}</td>
+                    <td>{{ order[1] }}</td>
+                    <td>{{ order[2] }}</td>
+                    <td>{{ order[3] }}</td>
+                    <td>{{ order[4] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>
+{% endblock %}

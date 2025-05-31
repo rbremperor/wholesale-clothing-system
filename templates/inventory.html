@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}Inventory Management - Wholesale Clothing{% endblock %}
+
+{% block content %}
+<section class="card">
+    <div class="card-header">
+        <h2>Product Inventory</h2>
+        <a href="/products/add" class="button">Add New Product</a>
+    </div>
+    <div class="table-container">
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Size</th>
+                <th>Qty</th>
+                <th>Price</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for product in products %}
+            <tr>
+                <td>{{ product[0] }}</td>
+                <td>{{ product[1] }}</td>
+                <td>{{ product[2] }}</td>
+                <td>{{ product[3] }}</td>
+                <td>{{ product[4] }}</td>
+                <td>${{ "%.2f"|format(product[5]) }}</td>
+                <td>
+                    <a href="/products/edit/{{ product[0] }}" class="button small">Edit</a>
+                    <a href="/products/delete/{{ product[0] }}" class="button small danger"
+                       onclick="return confirm('Are you sure you want to delete this product?')">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>
+{% endblock %}

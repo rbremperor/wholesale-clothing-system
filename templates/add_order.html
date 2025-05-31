@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}Place Order - Wholesale Clothing{% endblock %}
+
+{% block content %}
+<section class="card">
+    <h2>Place New Order</h2>
+    {% if error %}
+    <div class="alert error">{{ error }}</div>
+    {% endif %}
+    <form action="/place_order" method="post">
+        <div class="form-group">
+            <select name="product_id" required>
+                <option value="">Select Product</option>
+                {% for product in products %}
+                <option value="{{ product[0] }}">{{ product[1] }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <input type="text" name="customer_name" placeholder="Customer Name" required>
+        </div>
+        <div class="form-group">
+            <input type="number" name="quantity" placeholder="Quantity" min="1" required>
+        </div>
+        <div class="form-group">
+            <input type="date" name="order_date" value="{{ today }}" required>
+        </div>
+        <div class="form-actions">
+            <button type="submit" class="button primary">Submit Order</button>
+            <a href="/orders" class="button">Cancel</a>
+        </div>
+    </form>
+</section>
+{% endblock %}
