@@ -27,7 +27,7 @@ jobs:
         with:
           host: ${{ secrets.AWS_EC2_HOST }}
           username: ubuntu
-          key: ${{ secrets.AWS_SSH_KEY }}
+          key: ${{ secrets.EC2_SSH_KEY }}
           script: |
             cd ~/app/wholesale-clothing-system
             git pull origin main
