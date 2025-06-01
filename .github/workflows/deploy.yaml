@@ -17,6 +17,10 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Test ping to EC2 host
+        run:
+          ping -c 3 ${{ secrets.AWS_EC2_HOST }}
+
       - name: Deploy to production
         if: github.ref == 'refs/heads/master'
         uses: appleboy/ssh-action@v0.1.10
