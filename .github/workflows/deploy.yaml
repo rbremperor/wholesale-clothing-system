@@ -30,7 +30,7 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
             cd ~/app/wholesale-clothing-system
-            git pull origin main
+            git pull origin master
             source venv/bin/activate
             pip install -r requirements.txt
             sudo systemctl restart fastapi
