@@ -1,0 +1,38 @@
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+
+# VSCode or JetBrains IDEs
+.idea/
+.vscode/
+
+# Databases or sensitive files
+*.db
+*.sqlite3
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Test/report folders
+htmlcov/
+coverage.xml
+*.cover
+.cache/
+pytest_cache/
+
+# Environment variables
+.env
+.env.*
